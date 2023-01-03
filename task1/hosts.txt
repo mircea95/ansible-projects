@@ -1,0 +1,2 @@
+[SERVER_1]
+linux1 ansible_host=172.27.185.43

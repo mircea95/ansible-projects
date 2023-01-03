@@ -1,0 +1,7 @@
+- name: Ansible Home Work
+  hosts: all
+  become: yes
+
+  roles:
+    - role: install_docker
+    - role: deploy_wordpress

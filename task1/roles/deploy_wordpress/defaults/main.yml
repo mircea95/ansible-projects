@@ -1,0 +1,4 @@
+---
+# defaults file for deploy_wordpress
+project_path: /home/app/wordpress
+file_path: /home/mipi/ansible-project/1.Home_Work/roles/deploy_wordpress/files/

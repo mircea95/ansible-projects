@@ -1,0 +1,24 @@
+---
+# tasks file for deploy_wordpress
+- name: Create Work Dir
+  file:
+    path: "{{ project_path }}"
+    state: directory
+
+- name: Copy files
+  copy:
+    src: "{{ file_path }}"
+    dest: "{{ project_path }}"
+
+- name: Tear down existing services
+  community.docker.docker_compose:
+    project_src: "{{ project_path }}"
+    state: absent
+
+- name: Create and start services
+  community.docker.docker_compose:
+      project_src: "{{ project_path }}"
+  register: output
+
+- debug:
+    var: output
